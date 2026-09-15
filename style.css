@@ -1,41 +1,63 @@
+/* 1. Turn on scroll snapping for the whole page */
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* Makes clicking your nav links slide smoothly */
+}
+
+/* 2. Reset the body to fill the screen */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
+}
+
+/* 3. The Magic: Make every block full-screen and snap into place */
+header, section, footer {
+    height: 100vh; /* 100% of the Viewport Height */
+    scroll-snap-align: start; /* Tells the browser to snap to the top of the section */
+    /* Center the content vertically and horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Keep your original 800px constraint so text doesn't stretch too wide */
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-header {
-    text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #eaeaea;
-}
-
+/* 4. Formatting your text and lists */
 h1, h2, h3 {
     color: #2c3e50;
+    margin-bottom: 10px;
 }
 
-section {
-    margin: 40px 0;
+/* Keep your list items neatly aligned to the left */
+ul {
+    text-align: left;
+    display: inline-block;
 }
 
-nav a {
-    text-decoration: none;
-    color: #3498db;
-    margin: 0 10px;
+nav {
+    margin-top: 20px;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
+    nav a {
+        text-decoration: none;
+        color: #3498db;
+        margin: 0 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
 
 footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 0.9em;
     color: #777;
 }
