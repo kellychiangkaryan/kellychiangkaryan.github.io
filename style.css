@@ -15,8 +15,7 @@ a { color: inherit; }
 .hero, .section, footer { padding-inline: max(1.5rem, calc((100% - 70rem) / 2)); }
 
 .hero { min-height: 100svh; padding-top: 1.25rem; padding-bottom: 2rem; display: flex; flex-direction: column; background: radial-gradient(circle at 88% 16%, #c7e5df 0, transparent 28rem), var(--paper); }
-.site-nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.brand { color: var(--accent); font-weight: 800; text-decoration: none; letter-spacing: .05em; }
+.site-nav { display: flex; justify-content: flex-end; align-items: center; gap: 1rem; }
 .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .25rem 1.25rem; }
 .nav-links a, footer a, .text-link { text-underline-offset: .25em; text-decoration-thickness: 1px; }
 .nav-links a { color: var(--muted); text-decoration: none; font-size: .94rem; }
