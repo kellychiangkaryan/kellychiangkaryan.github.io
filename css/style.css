@@ -120,8 +120,13 @@ section { padding: 56px 0; }
 .meta-box dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 700; }
 .meta-box dd { margin: 2px 0 0; font-weight: 600; }
 .case h2 { margin-top: 1.6em; }
-.case ul { padding-left: 1.2em; }
+.case ul, .case ol { padding-left: 1.2em; }
 .case li { margin-bottom: 6px; }
+.case summary { cursor: pointer; font-weight: 600; margin-bottom: 12px; }
+
+/* Screenshots and diagrams inside case studies */
+.shot { border-radius: var(--radius); border: 1px solid var(--line); }
+.shot.diagram { background: #fff; max-width: 640px; width: 100%; }
 .media {
   background: linear-gradient(135deg, var(--accent-soft), var(--warm-soft));
   border: 2px dashed #c9d8d5; border-radius: var(--radius); min-height: 260px;
@@ -134,7 +139,7 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bo
 /* ----- Screenshot gallery (case studies) ----- */
 .gallery { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 16px 0 28px; }
 .gallery figure { margin: 0; }
-.gallery img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 14px; }
+.gallery img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); margin-bottom: 14px; }
 .gallery figcaption { margin: 0; }
 .callout {
   background: var(--warm-soft); border-left: 4px solid var(--warm);
@@ -147,6 +152,8 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bo
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 24px; box-shadow: var(--shadow); margin: 24px 0;
 }
+.demo h3 { margin-top: 18px; }
+.demo .hint { margin-bottom: 6px; color: var(--muted); font-size: 0.95rem; }
 .demo .row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 14px 0; }
 .demo label { font-weight: 600; min-width: 150px; }
 .demo input[type="range"] { flex: 1; min-width: 160px; accent-color: var(--accent); }
@@ -217,7 +224,7 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bo
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0 32px; }
 .compare figure { margin: 0; }
 .compare a { position: relative; display: block; }
-.compare img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
+.compare img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); margin-bottom: 10px; }
 .compare figcaption { margin: 0; }
 .tag-label {
   position: absolute; top: 10px; left: 10px;
