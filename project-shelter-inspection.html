@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shelter Inspection App | Kelly Chiang</title>
+  <meta name="description" content="Case study: new features and live-data charts for a shelter inspection web app, built for New Hope Community Services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kelly Chiang</a>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="projects.html">Projects</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="case">
+      <div class="wrap" style="max-width: 820px;">
+        <p class="eyebrow">Case study &middot; Web development &amp; data</p>
+        <h1>Shelter Inspection App</h1>
+        <p class="lead">My final year project with a real client: New Hope Community Services, a Singapore social service agency that runs shelters for the homeless. I improved their shelter inspection web app and turned its live inspection data into charts that help inspectors see which shelters need attention.</p>
+
+        <dl class="meta-box">
+          <div><dt>Role</dt><dd>Developer</dd></div>
+          <div><dt>Team</dt><dd>Solo</dd></div>
+          <div><dt>Duration</dt><dd>Sep &ndash; Nov 2022</dd></div>
+          <div><dt>Tech</dt><dd>ASP.NET, C#, JavaScript, SQL</dd></div>
+        </dl>
+
+        <h2>The brief</h2>
+        <p>New Hope already had a web app for inspecting their shelters. My task was to improve its existing functions and build new ones, so their team could run their shelters more effectively.</p>
+
+        <h2>What I built</h2>
+        <ul>
+          <li><strong>Shelter management:</strong> added pages to add new shelters and update existing ones.</li>
+          <li><strong>Easier navigation:</strong> added back buttons throughout the app and fixed a pagination bug.</li>
+          <li><strong>New charts from live data:</strong> designed charts for inspection type (day or night), outstanding follow-ups and inspection ratings.</li>
+          <li><strong>Reorganised statistics:</strong> split one crowded Statistics page into two, one for individual shelters and one for all shelters.</li>
+          <li><strong>One filter instead of many:</strong> replaced the separate drop-down on every chart with a single shelter selector, so inspectors see all of a shelter&rsquo;s charts at once.</li>
+        </ul>
+
+        <h2>Choosing what to chart</h2>
+        <p>Besides reviewing what data the live system collected, I imagined myself as an inspector and asked what I would want to know at a glance. That led to three new charts:</p>
+        <ul>
+          <li><strong>Inspection type (day/night):</strong> shows when inspections tend to happen.</li>
+          <li><strong>Inspection follow-ups:</strong> a reminder of how many inspections still have follow-ups to complete.</li>
+          <li><strong>Inspection rating:</strong> low ratings show which shelters need more attention.</li>
+        </ul>
+
+        <h3>Statistics menu: before and after</h3>
+        <div class="nav-compare">
+          <div class="nav-mock">
+            <span class="tag-label">Before</span>
+            <ul>
+              <li>Inspection Report
+                <ul><li>File Report</li><li>My Insp Reports</li><li>All Insp Reports</li><li class="hl">Statistics</li></ul>
+              </li>
+              <li>Reservation</li>
+            </ul>
+            <p class="nav-mock-note">Every chart sat on one Statistics page, each with its own drop-down.</p>
+          </div>
+          <div class="nav-mock">
+            <span class="tag-label">After</span>
+            <ul>
+              <li>Inspection Report</li>
+              <li class="hl-box">Statistics
+                <ul><li>Statistics &ndash; Individual Shelters</li><li>Statistics &ndash; All Shelters</li></ul>
+              </li>
+              <li>Reservation</li>
+            </ul>
+            <p class="nav-mock-note">Statistics got its own menu, split into individual shelters and all shelters.</p>
+          </div>
+        </div>
+
+        <figure>
+          <div class="hbar-chart no-values" role="img" aria-label="Example bar chart comparing the number of inspections across four shelters">
+            <p class="hbar-title">Inspections conducted</p>
+            <div class="hbar"><span class="hbar-label">Shelter A</span><span class="hbar-track"><span class="hbar-fill" style="width:60%"></span></span></div>
+            <div class="hbar"><span class="hbar-label">Shelter B</span><span class="hbar-track"><span class="hbar-fill" style="width:85%"></span></span></div>
+            <div class="hbar"><span class="hbar-label">Shelter C</span><span class="hbar-track"><span class="hbar-fill" style="width:40%"></span></span></div>
+            <div class="hbar"><span class="hbar-label">Shelter D</span><span class="hbar-track"><span class="hbar-fill" style="width:70%"></span></span></div>
+          </div>
+          <figcaption>The All Shelters page compares how many inspections each shelter has had. Illustrative example with placeholder data, since the real data is confidential.</figcaption>
+        </figure>
+
+        <h2>What I learned</h2>
+        <p>Working solo on a live system meant learning C#, JavaScript and SQL inside an existing codebase, and debugging Visual Studio errors on my own. It taught me to read and extend someone else&rsquo;s code, and to design features from the user&rsquo;s point of view.</p>
+
+        <a class="back" href="projects.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>&copy; <span id="year">2026</span> Kelly Chiang</div>
+      <div>
+        <a href="mailto:kellychiangyan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/kelly-chiang-yan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

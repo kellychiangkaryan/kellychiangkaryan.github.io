@@ -281,3 +281,29 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin: 12px 0 0; }
 }
 .card .thumb.thumb-emojis { display: flex; align-items: center; justify-content: center; gap: 8px; }
 .card .thumb.thumb-emojis img { width: 18%; max-width: 56px; height: auto; object-fit: contain; }
+
+/* ----- Shelter Inspection App ----- */
+.hbar-chart { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+.hbar-title { font-weight: 700; margin: 0 0 14px; }
+.hbar { display: grid; grid-template-columns: 220px minmax(0, 1fr) 44px; gap: 12px; align-items: center; margin: 10px 0; font-size: 0.92rem; }
+.hbar-track { background: var(--bg); border-radius: 999px; height: 14px; overflow: hidden; }
+.hbar-fill { display: block; height: 100%; background: var(--accent); border-radius: 999px; min-width: 4px; }
+.hbar-chart.no-values .hbar { grid-template-columns: 220px minmax(0, 1fr); }
+.hbar-value { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+.nav-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0 8px; }
+.nav-mock { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 52px 20px 18px; }
+.nav-mock ul { list-style: none; margin: 0; padding: 0; }
+.nav-mock > ul > li { padding: 8px 10px; border-radius: 8px; font-weight: 600; }
+.nav-mock ul ul { margin-top: 6px; }
+.nav-mock ul ul li { padding: 5px 10px 5px 18px; font-weight: 400; color: var(--muted); font-size: 0.93rem; }
+.nav-mock li.hl { color: var(--ink); background: var(--warm-soft); border-radius: 6px; }
+.nav-mock li.hl-box { outline: 2px solid var(--accent); background: var(--accent-soft); }
+.nav-mock-note { font-size: 0.88rem; color: var(--muted); margin: 12px 0 0; }
+.card .thumb.thumb-chart { display: flex; align-items: flex-end; justify-content: center; gap: 14px; padding: 28px 40px 0; background: var(--accent-soft); }
+.card .thumb.thumb-chart span { flex: 1; max-width: 46px; background: var(--accent); border-radius: 6px 6px 0 0; }
+@media (max-width: 600px) {
+  .nav-compare { grid-template-columns: 1fr; }
+  .hbar { grid-template-columns: minmax(0, 1fr) 44px; }
+  .hbar-label { grid-column: 1 / -1; }
+  .hbar-chart.no-values .hbar { grid-template-columns: minmax(0, 1fr); }
+}
