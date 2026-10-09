@@ -29,16 +29,16 @@
       <div class="wrap" style="max-width: 820px;">
         <p class="eyebrow">Case study &middot; Programming &amp; production</p>
         <h1>The Unraveling</h1>
-        <p class="lead">[One sentence pitch of the game: genre, setting, core mechanic.]</p>
+        <p class="lead">The Unraveling is a 2D top-down puzzle/stealth horror game. Players follow the trail of their best friend, Yuki , who disappeared after entering the haunted Silent Veil High. Trapped in a looping nightmare, you must uncover the truth behind a curse born from rumor and guilt. The objective is to navigate the school, solve puzzles , and survive the pursuit of the vengeful spirit, Kayo , to find out what really happened to your friend.</p>
 
         <dl class="meta-box">
           <div><dt>Roles</dt><dd>Project Manager &amp; Audio Programmer</dd></div>
-          <div><dt>Team</dt><dd>[X members, cross-disciplinary]</dd></div>
+          <div><dt>Team</dt><dd>[William Wibisana Dumanauw [Technical Lead], Xavier Koh Zhi Kuang [Graphics Lead/Programmer], Mandy Koh [Art Lead], Rosenah Binte Esa [Audio Lead], Elaine Lau Li Ling [Design Lead], Lim Tian Sing [Designer], Isaac Foo Yong Quan [Programmer], cross-disciplinary]</dd></div>
           <div><dt>Duration</dt><dd>Sep 2025 &ndash; Apr 2026</dd></div>
           <div><dt>Tech</dt><dd>Sodium custom engine, C++/C#, FMOD, Notion</dd></div>
         </dl>
 
-        <div class="media video">[Embed your gameplay / audio showcase video here]</div>
+        <div class="media video"><iframe src="https://youtu.be/-R1NwoHWxE8" title="Personal contribution video" allowfullscreen></iframe></div>
 
         <h2>Audio: spatial sound with FMOD</h2>
         <p>I built a dynamic spatial audio system in C++ and C# on top of FMOD. It uses Digital Signal Processing (DSP) crossfading and custom low-pass filters to make the world feel more immersive.</p>
@@ -73,8 +73,12 @@
         <ul>
           <li>Centralised the team's workflow in Notion so design and engineering stayed aligned, with a 100% on-time milestone submission rate.</li>
           <li>Ran structured playtesting and UAT before each major milestone, tracking and resolving 40+ technical regressions.</li>
-          <li>[Add: how you ran standups, how you prioritised bugs, one decision you're proud of.]</li>
+          <li><strong>Regular standups:</strong> I ran standups two to three times a week. Everyone shared their progress, any blockers and what they planned to work on next, so problems surfaced early instead of at the milestone deadline.</li>
+          <li><strong>Following up between meetings:</strong> I checked in with team members individually on their progress and followed up when something was quiet or stuck.</li>
+          <li><strong>Bug prioritisation:</strong> I prioritised bugs by impact on the team. Major blockers that affected other programmers' workflows were fixed first. Minor bugs were pushed to later milestones. If a fix was complex or would change the whole infrastructure, we deferred it to the next milestone rather than risk everyone's progress. For example, the isometric overlay for our top-down view was a big change that would have affected everyone's work, so I pushed it to the next milestone to keep the current build stable and shippable.</li>
         </ul>
+
+        <div class="callout"><strong>A decision I'm proud of:</strong> I treated every milestone as a question of "is this shippable?", not just "is everyone busy?". By checking in consistently with each person, I could see early whether the build would be ready to submit, and raise risks while there was still time to act.</div>
         <div class="media">[Add a screenshot of your Notion board / milestone plan]</div>
 
         <h2>System overview</h2>
@@ -83,8 +87,8 @@
 
         <h2>What I learned</h2>
         <ul>
-          <li>[Lesson about audio and gameplay feel]</li>
-          <li>[Lesson about leading a team and unblocking others]</li>
+          <li><strong>Audio transitions shape how a game feels.</strong> When moving from one room to another, the sound should crossfade, because an abrupt cut feels jarring and breaks immersion, especially in a horror game where atmosphere is everything. I also learned that a low-pass filter can direct attention: muffling the overall mix while the journal is open helps the player focus on reading instead of the sounds around them.</li>
+          <li><strong>A PM's job is to empower leads to act early.</strong> Technical debt is cheapest to deal with at the start and snowballs in the final weeks. If I ran another project, I would set up stricter delegation and accountability from the beginning: clear owners for each area, and leads encouraged to raise and fix structural problems early instead of waiting for a milestone crunch.</li>
         </ul>
 
         <a class="back" href="projects.html">&larr; Back to all projects</a>
