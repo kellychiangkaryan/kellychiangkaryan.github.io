@@ -212,3 +212,21 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bo
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ----- Before / after comparison (case studies) ----- */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0 32px; }
+.compare figure { margin: 0; }
+.compare a { position: relative; display: block; }
+.compare img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
+.compare figcaption { margin: 0; }
+.tag-label {
+  position: absolute; top: 10px; left: 10px;
+  padding: 3px 10px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  background: rgba(31, 36, 48, 0.85); color: #fff;
+}
+.tag-label.after { background: var(--accent); }
+@media (max-width: 520px) {
+  .compare { gap: 10px; }
+  .compare figcaption { font-size: 0.82rem; }
+}
