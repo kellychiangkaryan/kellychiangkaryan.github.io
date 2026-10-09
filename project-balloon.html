@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Balloon | Kelly Chiang</title>
-  <meta name="description" content="Case study: coding Level 2 of Balloon, where a constantly rising helium balloon must avoid hanging poles.">
+  <title>Egg The Balloon | Kelly Chiang</title>
+  <meta name="description" content="Case study: coding Level 2 and the Level 1 wind gusts for Egg The Balloon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -28,20 +28,30 @@
     <section class="case">
       <div class="wrap" style="max-width: 820px;">
         <p class="eyebrow">Case study &middot; Programming</p>
-        <h1>Balloon</h1>
+        <h1>Egg The Balloon</h1>
         <p class="lead">[Add a one-paragraph summary of the game.] The player guides a helium balloon that is always rising, steering it past obstacles as it floats upward.</p>
 
         <dl class="meta-box">
-          <div><dt>Role</dt><dd>Gameplay Programmer (Level 2)</dd></div>
+          <div><dt>Role</dt><dd>Gameplay Programmer (Level 2, and wind gusts in Level 1)</dd></div>
           <div><dt>Team</dt><dd>[Number of members and their roles]</dd></div>
           <div><dt>Duration</dt><dd>[Start &ndash; end]</dd></div>
-          <div><dt>Tech</dt><dd>[Engine / language]</dd></div>
+          <div><dt>Tech</dt><dd>C++, DigiPen Alpha Engine, JSON</dd></div>
         </dl>
 
-        <div class="media video"><iframe src="https://www.youtube.com/embed/vez6sf7QVjM" title="Balloon trailer" allowfullscreen></iframe></div>
+        <div class="media video"><iframe src="https://www.youtube.com/embed/vez6sf7QVjM" title="Egg The Balloon trailer" allowfullscreen></iframe></div>
 
-        <h2>What I did</h2>
-        <p>I coded the whole of Level 2. The helium balloon rises constantly, so the player can't stop and wait. They have to steer it around hanging poles as it climbs.</p>
+        <h2>Level 2: laundry poles</h2>
+        <p>I coded the whole of Level 2. The balloon floats up between two rows of HDB flats, and laundry poles stick out from the walls on both sides. Because the balloon is always rising, the player can't stop and wait. They have to keep steering left and right to find the gaps as they climb.</p>
+        <ul>
+          <li><strong>19 laundry poles:</strong> long, medium and short poles placed on the left and right walls to create gaps the player has to weave through. Each pole is positioned relative to the building wall, so the layout lines up with the buildings at any window size.</li>
+          <li><strong>Collision:</strong> I check the balloon (a circle) against each pole (a rectangle). On a hit, the balloon is pushed out to the side or below the pole, and its movement slows down so hitting a pole has a cost.</li>
+          <li><strong>Warning arrows:</strong> 13 arrows (left, right and up) appear at set heights with an alert sound, warning the player which side the next obstacle is coming from.</li>
+          <li><strong>Level flow:</strong> I connected the checkpoint, helium bar, death counter and timer into the level. If the balloon fully deflates, it goes back to the start and the death counter goes up. Reaching the top saves the time for the leaderboard and fades into Level 3.</li>
+          <li><strong>Data-driven values:</strong> pole sizes, arrow heights and the checkpoint position are loaded from JSON files, so the level could be tuned without recompiling.</li>
+        </ul>
+
+        <h2>Level 1: wind gusts</h2>
+        <p>I also built the wind gust mechanic for Level 1. When the balloon flies into a wind zone between the clouds, the wind pushes it back down, so the player has to fight through it. I also added the animated wind effect that shows where the gusts are.</p>
 
         <a class="back" href="projects.html">&larr; Back to all projects</a>
       </div>

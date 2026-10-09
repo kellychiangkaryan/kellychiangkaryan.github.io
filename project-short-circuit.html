@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Short Circuit | Kelly Chiang</title>
-  <meta name="description" content="Case study: enemy spawning, grid sizes, element logos, UI fixes and project management for Short Circuit.">
+  <meta name="description" content="Case study: enemies, battle end screens, hover UI, element logos and project management for Short Circuit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -29,23 +29,24 @@
       <div class="wrap" style="max-width: 820px;">
         <p class="eyebrow">Case study &middot; Programming &amp; production</p>
         <h1>Short Circuit</h1>
-        <p class="lead">[Add a one-paragraph summary of the game: genre, what the player does and the goal.]</p>
+        <p class="lead">Short Circuit is a puzzle battle game. Players travel across a map of battles, shops and treasure, and fight enemies by placing circuit pieces on a grid to build a closed loop. Elemental pieces deal extra damage to enemies weak to that element.</p>
 
         <dl class="meta-box">
-          <div><dt>Roles</dt><dd>Project Manager, Gameplay Programmer, UI &amp; Icon Design</dd></div>
-          <div><dt>Team</dt><dd>[Number of members and their roles]</dd></div>
-          <div><dt>Duration</dt><dd>[Start &ndash; end]</dd></div>
-          <div><dt>Tech</dt><dd>[Engine / language]</dd></div>
+          <div><dt>Roles</dt><dd>Project Manager, Gameplay &amp; UI Programmer, Icon Design</dd></div>
+          <div><dt>Team</dt><dd>5 members (including me): Jason Teo Jun Hao (Lead Programmer), William Wibisana Dumanauw, Lim Yan De, Ong Wei Song</dd></div>
+          <div><dt>Duration</dt><dd>2024</dd></div>
+          <div><dt>Tech</dt><dd>C, CProcessing</dd></div>
         </dl>
 
         <div class="media video"><iframe src="https://www.youtube.com/embed/ItvRJiRp6qM" title="Short Circuit trailer" allowfullscreen></iframe></div>
 
         <h2>What I did</h2>
         <ul>
-          <li><strong>Enemy spawning:</strong> I coded the randomisation of where enemies appear on the grid.</li>
-          <li><strong>Grid sizes:</strong> I coded the grid sizes the game is played on.</li>
+          <li><strong>Enemies:</strong> I set up the three enemy types (Wizard, Plant and Vulture), each with its own health, attack, weakness and resistance. I also coded the random spawning, which picks the enemy types and places them on random, non-overlapping cells of the grid.</li>
+          <li><strong>Battle won and lost screens:</strong> the end screens, with a button that resets the run and returns to the main menu.</li>
+          <li><strong>Hover info in battle:</strong> hovering over an enemy or boss part shows its health, weakness and resistance, and hovering over a circuit piece shows its element.</li>
+          <li><strong>Map hover and paths:</strong> hovering over a node on the map describes the event ahead, and the paths from the player's current node are highlighted.</li>
           <li><strong>Element logos:</strong> I designed the logos for each element.</li>
-          <li><strong>UI fixes:</strong> I fixed UI elements so they displayed and behaved correctly.</li>
           <li><strong>Project management:</strong> I was the project manager for the group.</li>
         </ul>
 
