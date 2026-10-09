@@ -30,10 +30,16 @@
     });
   });
 
-  // Image lightbox: links to images open in an overlay instead of a new tab
-  var imgLinks = Array.prototype.slice.call(
-    document.querySelectorAll('a[href$=".jpg"], a[href$=".jpeg"], a[href$=".png"], a[href$=".svg"], a[href$=".gif"], a[href$=".webp"]')
-  );
+  // Image lightbox: images in case studies open in an overlay instead of a new tab.
+  // Covers images wrapped in a link to the full file and plain images in a figure.
+  var imgLinks = [];
+  document.querySelectorAll('main figure img, main .compare img').forEach(function (img) {
+    if (img.closest('.card')) return;
+    var a = img.closest('a');
+    var target = a && /\.(jpe?g|png|svg|gif|webp)$/i.test(a.getAttribute('href') || '') ? a : img;
+    if (imgLinks.indexOf(target) === -1) imgLinks.push(target);
+  });
+  imgLinks.forEach(function (el) { el.classList.add('zoomable'); });
   if (imgLinks.length) {
     var box = document.createElement('div');
     box.className = 'lightbox';
@@ -58,10 +64,10 @@
     function captionFor(a) {
       var fig = a.closest('figure');
       var cap = fig && fig.querySelector('figcaption');
-      var tag = a.querySelector('.tag-label');
+      var tag = a.tagName === 'IMG' ? null : a.querySelector('.tag-label');
       var text = cap ? cap.textContent.trim() : '';
       if (!text) {
-        var img = a.querySelector('img');
+        var img = a.tagName === 'IMG' ? a : a.querySelector('img');
         text = img ? img.alt : '';
       }
       return (tag ? tag.textContent.trim() + ': ' : '') + text;
@@ -70,8 +76,8 @@
     function show(i) {
       current = (i + imgLinks.length) % imgLinks.length;
       var a = imgLinks[current];
-      var thumb = a.querySelector('img');
-      lbImg.src = a.getAttribute('href');
+      var thumb = a.tagName === 'IMG' ? a : a.querySelector('img');
+      lbImg.src = a.tagName === 'IMG' ? a.currentSrc || a.src : a.getAttribute('href');
       lbImg.alt = thumb ? thumb.alt : '';
       lbCap.textContent = captionFor(a);
       lbCap.hidden = !lbCap.textContent;
@@ -101,6 +107,15 @@
         e.preventDefault();
         open(i);
       });
+      if (a.tagName === 'IMG') {
+        // Plain images aren't focusable, so make them keyboard-operable like the linked ones
+        a.tabIndex = 0;
+        a.setAttribute('role', 'button');
+        a.setAttribute('aria-label', 'Enlarge image: ' + a.alt);
+        a.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+        });
+      }
     });
 
     box.querySelector('.lb-close').addEventListener('click', close);

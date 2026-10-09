@@ -333,3 +333,4 @@ body.lb-open { overflow: hidden; }
   .lb-prev { left: calc(50% - 60px); }
   .lb-next { right: calc(50% - 60px); }
 }
+.zoomable, .zoomable img { cursor: zoom-in; }
