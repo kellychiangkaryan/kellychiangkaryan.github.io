@@ -158,6 +158,30 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bo
 .skills h3 { font-size: 1rem; margin-bottom: 6px; }
 .skills p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
+/* ----- About: open skill list + timeline ----- */
+.skill-list { margin: 16px 0 0; }
+.skill-list > div { display: grid; grid-template-columns: 200px 1fr; gap: 4px 24px; padding: 14px 0; border-top: 1px solid var(--line); }
+.skill-list > div:last-child { border-bottom: 1px solid var(--line); }
+.skill-list dt { font-weight: 700; }
+.skill-list dd { margin: 0; color: var(--muted); }
+
+.timeline-heading { margin-top: 32px; color: var(--accent); }
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 200px 1fr; gap: 0 32px; }
+.timeline .when { padding: 4px 0 28px; text-align: right; }
+.timeline .period { display: block; font-weight: 700; color: var(--warm); font-size: 0.9rem; letter-spacing: 0.02em; }
+.timeline .org { display: block; color: var(--muted); font-size: 0.95rem; }
+.timeline .what { position: relative; padding: 0 0 28px 28px; border-left: 2px solid var(--line); }
+.timeline .what::before, .timeline .when::before {
+  content: ""; position: absolute; left: -7px; top: 9px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+.timeline .when::before { display: none; }
+.timeline li:last-child .what { padding-bottom: 4px; }
+.timeline h4 { font-size: 1.05rem; margin: 0 0 6px; line-height: 1.35; }
+.timeline .what p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
 /* ----- Footer ----- */
 .site-footer { border-top: 1px solid var(--line); padding: 36px 0; margin-top: 40px; color: var(--muted); font-size: 0.95rem; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
@@ -171,6 +195,12 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bo
   .nav ul.open { display: flex; }
   .about-grid { grid-template-columns: 1fr; }
   .portrait { max-width: 260px; }
+  .skill-list > div { grid-template-columns: 1fr; }
+  .timeline li { grid-template-columns: 1fr; }
+  .timeline .when { text-align: left; padding: 0 0 4px 28px; border-left: 2px solid var(--line); }
+  .timeline .when { position: relative; }
+  .timeline .when::before { display: block; }
+  .timeline .what::before { display: none; }
   .hero { padding-top: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
