@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Unraveling | Kelly Chiang</title>
+  <meta name="description" content="Case study: spatial audio with FMOD and project management on a custom C++ engine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kelly Chiang</a>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="projects.html">Projects</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="resume.pdf">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="case">
+      <div class="wrap" style="max-width: 820px;">
+        <p class="eyebrow">Case study &middot; Programming &amp; production</p>
+        <h1>The Unraveling</h1>
+        <p class="lead">[One sentence pitch of the game: genre, setting, core mechanic.]</p>
+
+        <dl class="meta-box">
+          <div><dt>Roles</dt><dd>Project Manager &amp; Audio Programmer</dd></div>
+          <div><dt>Team</dt><dd>[X members, cross-disciplinary]</dd></div>
+          <div><dt>Duration</dt><dd>Sep 2025 &ndash; Apr 2026</dd></div>
+          <div><dt>Tech</dt><dd>Sodium custom engine, C++/C#, FMOD, Notion</dd></div>
+        </dl>
+
+        <div class="media video">[Embed your gameplay / audio showcase video here]</div>
+
+        <h2>Audio: spatial sound with FMOD</h2>
+        <p>I built a dynamic spatial audio system in C++ and C# on top of FMOD. It uses Digital Signal Processing (DSP) crossfading and custom low-pass filters to make the world feel more immersive.</p>
+
+        <h3>Try the concept</h3>
+        <p>This small demo uses synthesised sound in your browser to show the two techniques. It is a simplified illustration, not the game's actual audio. <em>Use headphones and keep the volume low.</em></p>
+
+        <div class="demo" id="audio-demo">
+          <div class="row">
+            <button id="demo-play" type="button">Start sound</button>
+          </div>
+
+          <h3 style="margin-top:18px;">Low-pass filter</h3>
+          <p style="margin-bottom:6px;color:var(--muted);font-size:.95rem;">Cutting high frequencies makes a sound feel far away or behind a wall.</p>
+          <div class="row">
+            <label for="demo-cutoff">Cutoff frequency</label>
+            <input id="demo-cutoff" type="range" min="200" max="8000" value="8000" step="50">
+            <output id="demo-cutoff-out">8000 Hz</output>
+          </div>
+
+          <h3 style="margin-top:18px;">Crossfade</h3>
+          <p style="margin-bottom:6px;color:var(--muted);font-size:.95rem;">Blend smoothly between two layers, like moving from one room's ambience to another.</p>
+          <div class="row">
+            <label for="demo-fade">Room A &harr; Room B</label>
+            <input id="demo-fade" type="range" min="0" max="100" value="0">
+            <output id="demo-fade-out">100% A</output>
+          </div>
+          <p class="note">Tip: swap in clips from your own game by replacing the synthesised sources in <code>js/audio-demo.js</code>.</p>
+        </div>
+
+        <h2>Production: keeping the team on track</h2>
+        <ul>
+          <li>Centralised the team's workflow in Notion so design and engineering stayed aligned, with a 100% on-time milestone submission rate.</li>
+          <li>Ran structured playtesting and UAT before each major milestone, tracking and resolving 40+ technical regressions.</li>
+          <li>[Add: how you ran standups, how you prioritised bugs, one decision you're proud of.]</li>
+        </ul>
+        <div class="media">[Add a screenshot of your Notion board / milestone plan]</div>
+
+        <h2>System overview</h2>
+        <div class="media">[Add a simple diagram: game events &rarr; audio manager &rarr; FMOD (DSP chain) &rarr; output]</div>
+        <p>[Add 2-3 short code snippets with a sentence explaining each. Link to the repo if it's public: <a href="#">GitHub</a>.]</p>
+
+        <h2>What I learned</h2>
+        <ul>
+          <li>[Lesson about audio and gameplay feel]</li>
+          <li>[Lesson about leading a team and unblocking others]</li>
+        </ul>
+
+        <a class="back" href="projects.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>&copy; <span id="year">2026</span> Kelly Chiang</div>
+      <div>
+        <a href="mailto:kellychiangyan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/kelly-chiang-yan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/audio-demo.js"></script>
+</body>
+</html>

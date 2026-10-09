@@ -1,0 +1,178 @@
+/* ===== Kelly Chiang portfolio — light theme =====
+   Change colours in :root to restyle the whole site. */
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1f2430;
+  --muted: #5d6475;
+  --line: #e7e2d9;
+  --accent: #2f6f6a;        /* deep teal */
+  --accent-soft: #e2f0ee;
+  --warm: #e8845a;          /* warm highlight */
+  --warm-soft: #fbe9df;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(31, 36, 48, 0.07);
+  --max: 1080px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+img, video { max-width: 100%; display: block; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--warm); }
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; }
+
+.wrap { width: min(var(--max), 100% - 32px); margin-inline: auto; }
+section { padding: 56px 0; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--warm);
+  margin-bottom: 10px;
+}
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
+
+/* ----- Nav ----- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 248, 244, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+.nav a.link { color: var(--ink); text-decoration: none; font-weight: 500; padding: 6px 2px; border-bottom: 2px solid transparent; }
+.nav a.link:hover, .nav a.link.active { border-bottom-color: var(--warm); color: var(--ink); }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font: inherit; cursor: pointer; }
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 999px;
+  background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+  border: 2px solid var(--accent); transition: transform .15s, background .15s;
+}
+.btn:hover { transform: translateY(-2px); color: #fff; background: #25595a; }
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn.ghost:hover { background: var(--accent-soft); color: var(--accent); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+/* ----- Hero ----- */
+.hero { padding: 84px 0 40px; }
+.hero h1 span { color: var(--accent); }
+
+/* ----- Cards / grid ----- */
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow); text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(31, 36, 48, 0.12); color: inherit; }
+.card .thumb {
+  aspect-ratio: 16 / 10; background: linear-gradient(135deg, var(--accent-soft), var(--warm-soft));
+  display: grid; place-items: center; color: var(--muted); font-size: 0.9rem; text-align: center; padding: 12px;
+}
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card .body { padding: 20px; }
+.card p { color: var(--muted); font-size: 0.97rem; margin-bottom: 12px; }
+.card.hidden { display: none; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.tag.design { background: var(--warm-soft); color: #b3532a; }
+.tag.production { background: #ece8f7; color: #5a4a9a; }
+
+/* ----- Filters ----- */
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 32px; }
+.filter-btn {
+  font: inherit; font-weight: 600; padding: 8px 18px; border-radius: 999px;
+  border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer;
+}
+.filter-btn:hover { border-color: var(--accent); }
+.filter-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* ----- Case study ----- */
+.meta-box {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; margin: 28px 0;
+}
+.meta-box dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 700; }
+.meta-box dd { margin: 2px 0 0; font-weight: 600; }
+.case h2 { margin-top: 1.6em; }
+.case ul { padding-left: 1.2em; }
+.case li { margin-bottom: 6px; }
+.media {
+  background: linear-gradient(135deg, var(--accent-soft), var(--warm-soft));
+  border: 2px dashed #c9d8d5; border-radius: var(--radius); min-height: 260px;
+  display: grid; place-items: center; text-align: center; color: var(--muted); padding: 24px; margin: 20px 0;
+}
+.media.video { aspect-ratio: 16 / 9; }
+.media iframe { width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
+figcaption { font-size: 0.9rem; color: var(--muted); margin-top: -8px; margin-bottom: 20px; }
+.callout {
+  background: var(--warm-soft); border-left: 4px solid var(--warm);
+  padding: 14px 18px; border-radius: 8px; margin: 20px 0; font-size: 0.97rem;
+}
+.back { display: inline-block; margin-top: 32px; font-weight: 600; text-decoration: none; }
+
+/* ----- Interactive: audio demo ----- */
+.demo {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; box-shadow: var(--shadow); margin: 24px 0;
+}
+.demo .row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 14px 0; }
+.demo label { font-weight: 600; min-width: 150px; }
+.demo input[type="range"] { flex: 1; min-width: 160px; accent-color: var(--accent); }
+.demo output { font-variant-numeric: tabular-nums; color: var(--muted); min-width: 80px; }
+.demo button { font: inherit; font-weight: 600; padding: 10px 20px; border-radius: 999px; border: 2px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; }
+.demo button.off { background: transparent; color: var(--accent); }
+.demo .note { font-size: 0.88rem; color: var(--muted); margin: 10px 0 0; }
+
+/* ----- About ----- */
+.about-grid { display: grid; gap: 40px; grid-template-columns: 280px 1fr; align-items: start; }
+.portrait { aspect-ratio: 4 / 5; border-radius: var(--radius); background: linear-gradient(135deg, var(--accent-soft), var(--warm-soft)); display: grid; place-items: center; color: var(--muted); text-align: center; overflow: hidden; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.skills { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 16px; }
+.skills div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.skills h3 { font-size: 1rem; margin-bottom: 6px; }
+.skills p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ----- Footer ----- */
+.site-footer { border-top: 1px solid var(--line); padding: 36px 0; margin-top: 40px; color: var(--muted); font-size: 0.95rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
+.site-footer a { margin-right: 16px; }
+
+/* ----- Mobile ----- */
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .menu-btn { display: block; }
+  .nav ul { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: var(--bg); padding: 16px; border-bottom: 1px solid var(--line); gap: 12px; }
+  .nav ul.open { display: flex; }
+  .about-grid { grid-template-columns: 1fr; }
+  .portrait { max-width: 260px; }
+  .hero { padding-top: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
