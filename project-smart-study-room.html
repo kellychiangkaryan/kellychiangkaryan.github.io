@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Study Room | Kelly Chiang</title>
+  <meta name="description" content="Case study: the booking form and booking history for an IoT smart study room system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=9">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kelly Chiang</a>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="projects.html">Projects</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="case">
+      <div class="wrap" style="max-width: 820px;">
+        <p class="eyebrow">Case study &middot; IoT &amp; desktop app</p>
+        <h1>Smart Study Room</h1>
+        <p class="lead">An IoT system for booking and monitoring study rooms at Nanyang Polytechnic. A Raspberry Pi with sensors tracks each room&rsquo;s noise, temperature and lighting, and students tap their student card to check in. I built the room booking side of the student app.</p>
+
+        <dl class="meta-box">
+          <div><dt>Role</dt><dd>Developer: booking form and booking history</dd></div>
+          <div><dt>Team</dt><dd>Team of 4</dd></div>
+          <div><dt>Duration</dt><dd>2021 &ndash; 2022</dd></div>
+          <div><dt>Tech</dt><dd>C#, Windows Forms, SQL Server, Raspberry Pi</dd></div>
+        </dl>
+
+        <h2>The idea</h2>
+        <p>Our brief was to build a smart solution with at least one user input sensor and one environment sensor. We chose study rooms. Students book a room and check in with their student card on an RFID reader, a light shows whether the room is taken, and they can turn a knob to adjust the light. A sound sensor and a temperature sensor let staff spot rooms that are too noisy or too hot or cold. Students who don&rsquo;t show up for their booking can be blacklisted.</p>
+
+        <h2>My part: booking</h2>
+        <p>I built the booking form and booking history in the student app, along with the booking table they save to.</p>
+
+        <h3>Booking form</h3>
+        <div class="media video"><video controls muted playsinline preload="metadata" poster="images/studyroom-form.jpg"><source src="videos/studyroom-booking-form.mp4" type="video/mp4"></video></div>
+        <ul>
+          <li><strong>Student details filled in:</strong> the form picks up the logged-in student, so they only enter who&rsquo;s attending, the date, time slot, group size and room.</li>
+          <li><strong>Date rules:</strong> students can book up to 14 days ahead, but not in the past or on weekends.</li>
+          <li><strong>Checks before saving:</strong> the booking is saved only when every field is filled in, with a clear message if something is missing.</li>
+        </ul>
+
+        <h3>Booking history</h3>
+        <div class="media video"><video controls muted playsinline preload="metadata" poster="images/studyroom-history.jpg"><source src="videos/studyroom-booking-history.mp4" type="video/mp4"></video></div>
+        <ul>
+          <li><strong>Own bookings only:</strong> each student sees just their own bookings, newest first.</li>
+          <li><strong>Cancelling:</strong> students can cancel an upcoming booking after confirming. Past bookings can only be viewed.</li>
+        </ul>
+
+        <a class="back" href="projects.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>&copy; <span id="year">2026</span> Kelly Chiang</div>
+      <div>
+        <a href="mailto:kellychiangyan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/kelly-chiang-yan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
