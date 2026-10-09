@@ -103,6 +103,7 @@ section { padding: 56px 0; }
 .tag { font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
 .tag.design { background: var(--warm-soft); color: #b3532a; }
 .tag.production { background: #ece8f7; color: #5a4a9a; }
+.tag.tech { background: #eef0f3; color: var(--muted); }
 
 /* ----- Filters ----- */
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 32px; }
