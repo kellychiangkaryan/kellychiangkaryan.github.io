@@ -96,24 +96,29 @@
         <div class="callout"><strong>A decision I'm proud of:</strong> I treated every milestone as a question of "is this shippable?", not just "is everyone busy?". By checking in consistently with each person, I could see early whether the build would be ready to submit, and raise risks while there was still time to act.</div>
 
         <figure>
-          <img src="images/notion_home.jpg" alt="Team Notion home page organising workflows, guides, checklists and weekly reports" style="border-radius:14px;border:1px solid var(--line);">
+          <img src="images/notion_home.png" alt="Team Notion home page organising workflows, guides, checklists and weekly reports" style="border-radius:14px;border:1px solid var(--line);">
           <figcaption>Our team's Notion hub: workflows, guides, checklists and weekly reports in one place.</figcaption>
         </figure>
 
         <figure>
-          <img src="images/notion-bugs-tracker.jpg" alt="Notion bug tracker with tags, system, subsystem, status, steps to replicate and screenshots" style="border-radius:14px;border:1px solid var(--line);">
+          <img src="images/notion-bugs-tracker.png" alt="Notion bug tracker with tags, system, subsystem, status, steps to replicate and screenshots" style="border-radius:14px;border:1px solid var(--line);">
           <figcaption>Bug tracker: every bug is tagged by system, given a status and steps to replicate, so the team could prioritise blockers first.</figcaption>
         </figure>
 
         <figure>
-          <img src="images/notion_checklist.jpg" alt="Submission checklist example with each team member's deliverables and completion status" style="border-radius:14px;border:1px solid var(--line);">
+          <img src="images/notion_checklist.png" alt="Submission checklist example with each team member's deliverables and completion status" style="border-radius:14px;border:1px solid var(--line);">
           <figcaption>Submission checklist: each row is a team member and each column a deliverable, so ownership was clear before submitting. "Not Required" means that deliverable wasn't assigned to that person.</figcaption>
         </figure>
 
         <h2>System overview</h2>
 
         <h3>Audio pipeline</h3>
-        <div class="media">[Add a simple diagram: game events &rarr; audio manager &rarr; FMOD (DSP chain) &rarr; output]</div>
+        <figure>
+          <a href="images/audio-pipeline.svg" target="_blank" rel="noopener">
+            <img src="images/audio-pipeline.svg" alt="Audio pipeline: C# gameplay scripts and audio components go through the resource manager to the C++ AudioManager, which routes sounds to six FMOD channel groups with low-pass and reverb DSPs, then to the player's speakers" style="border-radius:14px;border:1px solid var(--line);background:#fff;max-width:640px;width:100%;">
+          </a>
+          <figcaption>How a sound travels from gameplay code to the player's speakers. Click to view full size.</figcaption>
+        </figure>
 
         <h3>Scene switching workflow</h3>
         <p>I built the scene workflow for our editor in C++ with ImGui. The Scene Browser panel lists every scene, loads one on double-click, warns before discarding unsaved changes, checks file names when saving, and creates new scenes. Creating a scene generates its scene file and a matching tilemap file with default texture mappings, so designers can start building right away.</p>
@@ -125,7 +130,7 @@
         </figure>
 
         <h3>Prefab workflow</h3>
-        <p>The prefab functions were built by our Technical Lead. [Add what you did with them, e.g. "I used them to design the editor workflow so edits to an instance stay unique, and documented it for the team."]</p>
+        <p>Our Technical Lead built the core prefab system. I built the editing and saving of prefabs on top of it. A designer edits a prefab through an entity in the editor, and saving writes that entity's components back to the prefab's YAML file. The prefab is then reloaded right away, so the engine uses the new data instead of the old version. I also added entity tracking: when a prefab is applied to an entity, the prefab records that entity in its list of instances if it isn't already there, so each prefab knows which entities in the scene came from it.</p>
         <details>
           <summary style="cursor:pointer;font-weight:600;margin-bottom:12px;">View the prefab workflow flowchart</summary>
           <figure>
