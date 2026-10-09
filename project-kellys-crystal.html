@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelly's Crystal | Kelly Chiang</title>
+  <meta name="description" content="Case study: Kelly's Crystal, an online crystal shop built with ASP.NET, C# and SQL Server.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kelly Chiang</a>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="projects.html">Projects</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="case">
+      <div class="wrap" style="max-width: 820px;">
+        <p class="eyebrow">Case study &middot; Web development</p>
+        <h1>Kelly&rsquo;s Crystal</h1>
+        <p class="lead">An online shop for crystals, built for an advanced web development module. Shoppers can browse the catalogue, search, read and leave reviews, and check out, while admins manage products, orders and users.</p>
+
+        <dl class="meta-box">
+          <div><dt>Role</dt><dd>Developer &amp; designer</dd></div>
+          <div><dt>Team</dt><dd>Solo</dd></div>
+          <div><dt>Duration</dt><dd>2022</dd></div>
+          <div><dt>Tech</dt><dd>ASP.NET Web Forms, C#, SQL Server, HTML/CSS</dd></div>
+        </dl>
+
+        <figure>
+          <a href="images/crystal-home.jpg" target="_blank" rel="noopener"><img src="images/crystal-home.jpg" alt="Kelly's Crystal home page with a crystal slideshow and a row of crystal towers" class="shot"></a>
+          <figcaption>Home page: a slideshow of featured crystals, then the latest crystal towers. Click to view full size.</figcaption>
+        </figure>
+
+        <h2>From a bookstore to a crystal shop</h2>
+        <p>The module gave us a starter template for an online bookstore. I turned it into my own shop: I rewrote the CSS and reworked the page layouts, replaced the books with a catalogue of 25 crystals across five categories, and wrote the content pages, including an About page and a guide to cleansing crystals.</p>
+
+        <h2>What the site does</h2>
+        <ul>
+          <li><strong>Accounts:</strong> shoppers can create an account and sign in, with passwords stored as salted hashes. Admins have a separate sign-in.</li>
+          <li><strong>Browsing:</strong> a catalogue sorted into bracelets, tumbles, towers, spheres and cubes, each showing where the crystal comes from, plus a search bar.</li>
+          <li><strong>Product pages:</strong> price, add to cart and wishlist, and customer reviews with star ratings.</li>
+          <li><strong>Checkout:</strong> a shopping cart, then shipping and payment pages.</li>
+          <li><strong>Admin pages:</strong> manage users and orders, and add new products with an image upload.</li>
+          <li><strong>Database:</strong> products, users, orders and reviews are stored in SQL Server.</li>
+        </ul>
+
+        <figure>
+          <a href="images/crystal-catalogue.jpg" target="_blank" rel="noopener"><img src="images/crystal-catalogue.jpg" alt="Catalogue of crystal bracelets, tumbles and towers with their places of origin" loading="lazy" class="shot"></a>
+          <figcaption>The catalogue, sorted by crystal type, with each crystal&rsquo;s origin. Click to view full size.</figcaption>
+        </figure>
+
+        <figure>
+          <a href="images/crystal-product.jpg" target="_blank" rel="noopener"><img src="images/crystal-product.jpg" alt="Amethyst Bracelet product page with price, add to cart and wishlist buttons, and a customer review section" loading="lazy" class="shot"></a>
+          <figcaption>A product page with add to cart, wishlist and customer reviews. Click to view full size.</figcaption>
+        </figure>
+
+        <a class="back" href="projects.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>&copy; <span id="year">2026</span> Kelly Chiang</div>
+      <div>
+        <a href="mailto:kellychiangyan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/kelly-chiang-yan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
