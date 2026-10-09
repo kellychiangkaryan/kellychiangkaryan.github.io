@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task and Mood Tracker | Kelly Chiang</title>
+  <meta name="description" content="Case study: designing and coding an emoji mood feature for a task tracker that helps fresh graduates settle into their first job.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Kelly Chiang</a>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="projects.html">Projects</a></li>
+        <li><a class="link" href="about.html">About</a></li>
+        <li><a class="link" href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="case">
+      <div class="wrap" style="max-width: 820px;">
+        <p class="eyebrow">Case study &middot; Programming &amp; UX</p>
+        <h1>Task and Mood Tracker</h1>
+        <p class="lead">A web app that helps fresh graduates settle into their first job. Team leads assign and track tasks, and team members show how they feel about each task with an emoji, so struggles come to the surface without an awkward conversation.</p>
+
+        <dl class="meta-box">
+          <div><dt>Role</dt><dd>Developer: emoji mood feature and user stories</dd></div>
+          <div><dt>Team</dt><dd>Team of 5</dd></div>
+          <div><dt>Duration</dt><dd>Jun &ndash; Aug 2023</dd></div>
+          <div><dt>Tech</dt><dd>Ionic, Angular, TypeScript, Azure DevOps</dd></div>
+        </dl>
+
+        <h2>The problem</h2>
+        <p>We interviewed fresh polytechnic graduates in their first IT jobs. They told us that colleagues rarely had the patience to teach, that unnecessary meetings ate into their working time, and that it was hard to admit they were struggling. We turned these insights into a persona: George, a 23-year-old application support engineer who loved programming in school but started doubting his career choice after three months at work.</p>
+        <p>Our question became: <em>how might we help a fresh graduate cope with their first job, and let their supervisor see when they need help?</em></p>
+
+        <h2>From three ideas to one</h2>
+        <p>We explored three ideas: a social app for asking colleagues for help, a mood board for sharing how you feel about your tasks, and a task tracker with a library of past projects to learn from. We scored each one on desirability, feasibility, viability and novelty. The mood board and the task tracker tied, so we combined them into one app: the Task and Mood Tracker.</p>
+
+        <h2>My part: the emoji mood feature</h2>
+        <p>I designed and coded the emoji feature in the app. On every task assigned to them, a team member can pick an emoji to show how they feel about it and add a short note.</p>
+        <ul>
+          <li><strong>Five-step mood scale:</strong> from &ldquo;Very Confident, Very Happy&rdquo; to &ldquo;High Stress, Urgent Help&rdquo;, so a quick tap says more than a thumbs up.</li>
+          <li><strong>&ldquo;Share your thoughts&rdquo; note:</strong> an optional note of up to 50 characters, which can be deleted after a confirmation.</li>
+          <li><strong>Checks on input:</strong> the Update button stays off until a new emoji is picked, and the app asks for a different emoji if it&rsquo;s the same as before.</li>
+          <li><strong>Locked when approved:</strong> once a lead approves a task, its emoji can no longer be changed.</li>
+          <li><strong>Visible to team leads:</strong> each task&rsquo;s emoji and note appear in the lead&rsquo;s task table and task details, so they can spot who needs help without a progress meeting.</li>
+        </ul>
+
+        <h3>Try it</h3>
+        <p>The original app ran on a server that has since been shut down, so I rebuilt the feature here using the same emoji images, labels and checks.</p>
+
+        <div class="demo mood-demo" id="mood-demo">
+          <div class="mood-table" role="table" aria-label="My tasks">
+            <div class="mood-row mood-head" role="row">
+              <span role="columnheader">Task</span>
+              <span role="columnheader">Status</span>
+              <span role="columnheader">Mood</span>
+              <span role="columnheader"><span class="sr-only">Actions</span></span>
+            </div>
+          </div>
+
+          <div class="mood-editor" id="mood-editor" hidden>
+            <h3 id="mood-editor-title">Edit emoji</h3>
+            <p class="hint">Emojis go from very satisfied to very unsatisfied.</p>
+            <div class="mood-options" role="radiogroup" aria-labelledby="mood-editor-title"></div>
+            <label class="mood-note-label" for="mood-note">Share your thoughts</label>
+            <input id="mood-note" type="text" autocomplete="off">
+            <p class="mood-count" id="mood-count">0 / 50</p>
+            <p class="mood-msg" id="mood-msg" role="status"></p>
+            <div class="row">
+              <button type="button" id="mood-update" disabled>Update</button>
+              <button type="button" id="mood-cancel" class="off">Cancel</button>
+            </div>
+          </div>
+          <p class="note">This is a simplified rebuild for the portfolio. In the app, these changes were saved to the team&rsquo;s database.</p>
+        </div>
+
+        <h2>User stories</h2>
+        <p>I wrote the five user stories our sprints were built around:</p>
+        <ol>
+          <li>As a working fresh graduate, I want to view past projects in a repository, so that I can refer to them when I am unsure of my current task.</li>
+          <li>As a team leader, I want to track my members&rsquo; emotions about their tasks, so that I can better engage them and address their concerns.</li>
+          <li>As a superior, I want to assign and track tasks for my team, so that I can estimate the progress of the project.</li>
+          <li>As a working fresh graduate, I want to view the details of my tasks and request an extension if I need one, so that my supervisor and I both have visibility without a progress meeting.</li>
+          <li>As a working fresh graduate, I want to share my feelings through an emoji and a comment on my tasks, so that my team understands the difficulties I face.</li>
+        </ol>
+
+        <h2>Working in Scrum</h2>
+        <p>This was my first project run with Scrum. We worked in five two-week sprints in Azure DevOps, with a sprint backlog, capacity planning and burndown charts.</p>
+        <p>Early on, we didn&rsquo;t list all our tasks before each sprint started, so unfinished work piled up near the end and we skipped retrospectives. We fixed this by adding check-ins partway through each sprint, spending more time on sprint planning, and holding a retrospective after every sprint.</p>
+
+        <a class="back" href="projects.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>&copy; <span id="year">2026</span> Kelly Chiang</div>
+      <div>
+        <a href="mailto:kellychiangyan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/kelly-chiang-yan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/mood-demo.js"></script>
+</body>
+</html>
