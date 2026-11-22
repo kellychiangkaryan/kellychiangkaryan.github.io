@@ -145,6 +145,12 @@
           </figure>
         </details>
 
+        <h2>What failed</h2>
+        <ul>
+          <li><strong>Hard audio changes:</strong> FMOD can&rsquo;t animate DSP parameters, so setting the low-pass cutoff directly made the ambience snap from clear to muffled, and stopping sound effects outright caused audible clicks. I replaced both with fades: my own cutoff fade logic and a 50&nbsp;ms fade on every SFX stop.</li>
+          <li><strong>Technical debt left too late:</strong> structural problems we put off snowballed in the final weeks, and the isometric overlay could not fit into its milestone without breaking everyone&rsquo;s work. I deferred it to keep the build stable, and it changed how I would run the next project (below).</li>
+        </ul>
+
         <h2>What I learned</h2>
         <ul>
           <li><strong>Audio transitions shape how a game feels.</strong> When moving from one room to another, the sound should crossfade, because an abrupt cut feels jarring and breaks immersion, especially in a horror game where atmosphere is everything. I also learned that a low-pass filter can direct attention: muffling the background ambience while the journal is open helps the player focus on reading instead of the sounds around them.</li>
@@ -162,6 +168,7 @@
       <div>
         <a href="mailto:kellychiangyan@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/kelly-chiang-yan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/kellychiangkaryan" target="_blank" rel="noopener">GitHub</a>
         <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </div>
